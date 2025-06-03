@@ -9,3 +9,7 @@ def double(val):
 
 res = list(map(double, a))
 print(res)
+
+fruits = ['apple', 'banana', 'cherry']
+res = map(str.upper, fruits)
+print(list(res))
