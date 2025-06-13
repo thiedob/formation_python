@@ -13,3 +13,7 @@ print(res)
 fruits = ['apple', 'banana', 'cherry']
 res = map(str.upper, fruits)
 print(list(res))
+
+words = ['apple', 'banana', 'cherry']
+res = map(lambda s: s[0], words)
+print(list(res))
