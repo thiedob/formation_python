@@ -49,8 +49,8 @@ try:
     assert 1 == 2, "Assertion Failed"
 except AssertionError as e:
     print(e)
-"""
-#8_AttributeError
+
+#8_AttributeError   Raised when an attribute reference or assignment fails.
 class MyClass:
     pass
 obj = MyClass()
@@ -58,4 +58,66 @@ obj = MyClass()
 try:
     obj.some_attribute
 except AttributeError as e:
+    print(e)
+
+#9_IndexError   Raised when a sequence subscript is out of range
+mylist = [1, 2, 3]
+try:
+    element = mylist[5]
+except IndexError as e:
+    print(e)
+
+#10_KeyError    Raised when a dictionary Key is not found 
+d = {"key1":"value1"}
+try:
+    val = d["key2"]
+except KeyError as e:
+    print(e)
+
+#11 MemoryError     Raised when an operation runs out of memory
+try:
+    li = [1] * (10**10)
+except MemoryError as e:
+    print(e)
+
+#12NameError      Raised when a local or global name is not found
+try:
+    print(var)
+except NameError as e:
+    print(e)
+
+#13_OSError       Raised when a system-related operation (like file I/O) fails
+try:
+    open("non_existent_file.txt")
+except OSError as e:
+    print(e)
+
+#14_TypeError  Raised when an operation or function is applied to an object of inappropriate type
+try:
+    result = '2' + 2 
+except TypeError as e:
+    print(e)
+
+#15_ValueError     Raised when a function receives an argument of the right type but inappropriate value
+try:
+    res = int("abc")
+except ValueError as e:
+    print(e)
+
+#16_importError     Raised when an import statement has issues
+try:
+    import mod
+except ImportError as e:
+    print(e)
+
+#17_ModuleNotFoundError     Raised when a module cannot be found
+try:
+    import module
+except ModuleNotFoundError as e:
+    print(e)
+"""
+#18_IOError  Raised when an I/O operation (like reading or writing to a file) fails.
+try:
+    open("non_existent_file.txt")
+except IOError as e:
     print(e)
