@@ -2,6 +2,7 @@
 Menu  all menu request #155# and #100# (entering menu #155# et #100#)
 if wrong number reject 
 """
+import sys
 
 def valider_choix(chaine = "123456789"):
     #pass
@@ -24,7 +25,8 @@ def valider_choix(chaine = "123456789"):
 def saisir_code():
     #pass
     test = 0
-    while test == 0:
+    cpt = 0
+    while test == 0 and cpt <3:
         saisi = input("Veuillez entrez le code souhaite: ")
 
         match saisi:
@@ -80,7 +82,13 @@ def saisir_code():
             case _:
                 print("Le code a saisir doit etre #100# ou #155#")
                 test = 0
-
+                cpt +=1
+                if cpt == 3:
+                    try:
+                        sys.exit()
+                    except SystemExit as e:
+                        print("Vous avez atteint 3 tentives merci de revenir une prochaine fois")
+                        
 def affiche_match155():
     pass        
 

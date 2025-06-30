@@ -115,9 +115,87 @@ try:
     import module
 except ModuleNotFoundError as e:
     print(e)
-"""
+
 #18_IOError  Raised when an I/O operation (like reading or writing to a file) fails.
 try:
     open("non_existent_file.txt")
 except IOError as e:
+    print(e)
+
+#19_FileNotFoundError    Raised when a file or directory is requested but cannot be found
+try:
+    open("non_existent_file.txt")
+except FileNotFoundError as e:
+    print(e)
+
+#20_StopIteration     Raised when the next() function is called and there are no more items in an iterator.
+my_iter = iter([1, 2, 3])
+try:
+    while True:
+        print(next(my_iter))
+except StopIteration as e:
+    print("End of Iteration") 
+
+#21_KeyboardInterrupt   Raised when the user presses Ctrl+C or interrupts the program’s execution.
+try:
+    while True:
+        pass
+except KeyboardInterrupt as e:
+    print("Program interrupted by user")
+
+#22_SystemExit      Raised when the sys.exit() function is called to exit the program
+import sys
+try:
+    sys.exit()
+except SystemExit as e:
+    print("system exit called")
+
+#23_NotImplementedError     Raised when an abstract method that needs to be implemented is called.
+class BaseClass:
+    def some_method(self):
+        raise NotImplementedError("This method should be overridden")
+    
+try:
+    obj = BaseClass()
+    obj.some_method()
+except NotImplementedError as e:
+    print(e)
+
+#24_RuntimeError        Raised when a general error occurs in the program
+try:
+    raise RuntimeError("A Runtime Error Occured")
+except RuntimeError as e:
+    print(e)
+
+#25_RecursionError      Raised when the maximum recursion depth is exceeded
+try:
+    def recursive_function():
+        recursive_function()
+    
+    recursive_function()
+except RecursionError as e:
+    print(e)
+
+#26_SyntaxError         Raised when there is an error in the syntax of the code
+try:
+    eval('x === 2')
+except SyntaxError as e:
+    print(e)
+
+#27_IndentationError    Raised when there is an indentation error in the code
+try:
+    eval('def func():\n print("Hello")\n print("World")')
+except IndentationError as e:
+    print(e)
+
+#28_TabError    Raised when the indentation consists of inconsistent use of tabs and spaces
+try:
+    eval('def func():\n\tprint("Hello")\n   print(World)')
+except TabError as e:
+    print(e)
+"""
+#29_UnicodeError    Raised when a Unicode-related encoding or decoding error occurs
+try:
+    'æ'.encode('ascii')
+except UnicodeError as e:
     print(e)
