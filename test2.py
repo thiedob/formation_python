@@ -6,6 +6,7 @@ import sys
 
 def valider_choix(chaine = "123456789"):
     #pass
+    car = chaine[-1]
     test1 = 0
     while test1 == 0:
         try:
@@ -16,7 +17,7 @@ def valider_choix(chaine = "123456789"):
                 print("CHOIX CORRECT")
                 print(choix)
             else:
-                print("Vous devez saisir un chiffre entre 1 et 9")               
+                print("Vous devez saisir un chiffre entre 1 et ",car)               
                 test1 = 0    
         except:
             print("Veuillez saisir un nombre entier")
@@ -50,7 +51,12 @@ def saisir_code():
                 match choice:
                     case 1:
                         pass
-                        choice1 = valider_choix("12345")
+                        print("Mes offres")
+                        print("1. 1000F = 5Go+30j")
+                        print("2. 2000F = 15Go+250mn-30j")
+                        print("3. 3000F = 24Go+300mn+100SMS ")
+                        print("4. 2500F = 6Go+160mn_30j")
+                        choice1 = valider_choix("1234")
                     case 2:
                         pass
                         choice1 = valider_choix("012")
@@ -80,15 +86,15 @@ def saisir_code():
                 print(" ")            
                 #choice = valider_choix()
             case _:
+                cpt +=1
                 print("Le code a saisir doit etre #100# ou #155#")
                 test = 0
-                cpt +=1
                 if cpt == 3:
                     try:
                         sys.exit()
                     except SystemExit as e:
                         print("Vous avez atteint 3 tentives merci de revenir une prochaine fois")
-                        
+
 def affiche_match155():
     pass        
 
