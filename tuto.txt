@@ -1,1 +1,2 @@
-ceci est le nouveau texte ecrit depuis le language python
+Ceci est un nouveau texte ajoute a partir du fichier python avec le write mode il efface l'ancien contenue et le remplace par le nouveau
+ this is the text added using the append mode

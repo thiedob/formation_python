@@ -66,4 +66,66 @@ test1 = 0
     while test1 == 0:
         choix = int(input("Veuillez entrer un chiffre compris entre 1 et 9"))
         str(choix) not in test
+
+chaine = "771816114"
+longeur = len(chaine)
+print(longeur)
+for i in range(len(chaine)):
+    print(f"chaine{i} = ",chaine[i])
 """
+
+import os
+import sys
+
+def verifier_numero(numero):
+    longeur = len(numero)
+    test = True if longeur == 9 else False
+    cpt = 0
+    if test:
+        if numero[0]+numero[1] != "76":
+            print("un numero correct doit commencer par 76")
+        else:
+            rest_num = numero[2:]
+            for i in range(len(rest_num)):
+                print(rest_num[i])
+                if rest_num[i]  in "0123456789":
+                    cpt = 1
+                    continue
+                else:
+                    cpt == 0
+                    break          
+            if cpt == 0:
+                print("un numero ne doit contenir que des chiffres de 0 a 9")
+                return False
+            else:
+                return True
+    else:
+        print("un numero doit contenir 9 chiffres. Example 761234567")
+        return False
+
+
+def check_iteration():
+    cpt = 0
+    test = 0
+    while test == 0 and cpt <3:
+        try:
+            numero = input("Entrez le numero mobile souhaite: ")
+            check = verifier_numero(numero)
+            print(check)
+            if check == True:
+                test = 1
+            else:
+                test = 0
+                cpt += 1 
+        except :
+            cpt += 1
+    if cpt == 3 and test == 0:
+        try:
+            #os.system('clear')
+            sys.exit()
+        except SystemExit as e:
+            print("Vous avez atteint 3 tentatives merci de ")
+    elif cpt <= 3 and test == 1:
+        print("Votre numero est le :", numero)
+
+check_iteration()
