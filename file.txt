@@ -1,0 +1,1 @@
+New Text File created using write Python methodfile edited using append mode

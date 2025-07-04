@@ -47,7 +47,7 @@ file = open('fichier1.txt','rb')
 content = file.read()
 print(content)
 file.close()
-"""
+
 #Reading Specific Parts of a File
 file = open('fichier1.txt','r')
 content = file.read(300)
@@ -56,3 +56,18 @@ file.close()
 
 #Reading CSV Files in Python
 import csv
+
+with open('fichier.csv', newline='')as csvfile:
+    csvreader = csv.reader(csvfile)
+
+    for row in csvfile:
+        print(row)
+This code reads a CSV file line by line, parsing it into a list of values for each row.
+"""
+
+#Reading json Files in Python
+import json
+with open('fichier.json','r')as jsonfile:
+    data = json.load(jsonfile)
+    print(data)
+#This code reads a CSV file line by line, parsing it into a list of values for each row.
