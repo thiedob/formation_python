@@ -20,7 +20,7 @@ try:
         f.write("file created with x mode exclusive creation mode")
 except FileExistsError:
     print("File already Exists")
-"""
+
 #Writing to an Existing File
 
 with open('file1.txt','w') as f:
@@ -37,3 +37,5 @@ with open("file1.txt", "w") as f:
     
 f = open("file1.txt","r")
 print(f.read()) 
+
+"""
